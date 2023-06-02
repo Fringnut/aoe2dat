@@ -1,6 +1,18 @@
 # aoe2dat
 Extract Unit and Tech data from the Age of Empires II dat file
 
+# For Windows
+
+1. Clone
+2. Run `setup.bat`
+    - Note: this takes a long time, like 20 minutes
+3. Run `build.bat`
+4. Find the aoe2dat.exe in `.\code\build\Debug`
+    - Alternatively, you can use the `aoe2dat.sln` file in `.\code\build`
+    - This allows you to debug using Visual Studio 
+
+# In general
+
 ## Cloning this repository
 
 This repository uses git submodules, so clone it like this:
