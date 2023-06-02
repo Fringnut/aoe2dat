@@ -20,11 +20,21 @@ int main(int argc, char** argv) {
 	myfile.open("units_buildings_techs.json");
 	jayson.open("full.json");
 
-	cout << "Loading ./empires2_x2_p1.dat..." << endl;
+	char* fileName = "";
+
+	if (argc >= 2) {
+		fileName = argv[1];
+	}
+
+	if (strlen(fileName) == 0) {
+		fileName = "empires2_x2_p1.dat";
+	}
+
+	cout << "Loading " << fileName << endl;
 
 	genie::DatFile *df = new genie::DatFile();
 	df->setGameVersion(genie::GV_LatestDE2);
-	df->load(argv[1]);
+	df->load(fileName);
 
 	cout << "Extracting json data..." << endl;
 
@@ -163,6 +173,8 @@ int main(int argc, char** argv) {
 	myfile << "}" << endl;
 	myfile << "}" << endl;
 	myfile.close();
+
+	cout << "Outputting json data." << endl;
 
 	datfile2json(jayson, df);
 

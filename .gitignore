@@ -36,3 +36,10 @@ code/*.json
 *.exe
 *.out
 *.app
+
+# vcpkg
+vcpkg
+code/out
+
+# Visual Studio Code
+.vs
